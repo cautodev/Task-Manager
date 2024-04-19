@@ -1,0 +1,3 @@
+[submodule "Test-Submodule"]
+	path = Test-Submodule
+	url = https://github.com/cautodev/Test-Submodule.git

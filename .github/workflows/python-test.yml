@@ -28,7 +28,7 @@ jobs:
     - name: Move Tests
       run: |
         mkdir tests
-        mv sub-tests/Lesson-1/tests/* tests/
+        mv Test-Submodule/Lesson-1/tests/* tests/
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip

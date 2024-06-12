@@ -3,7 +3,7 @@ class Task:
     description = ""
     complete = False
 
-    def __init__(self, label="", description="") -> None:
+    def __init__(self, label="", description=""):
         self.label = label
         self.description = description
 

@@ -1,7 +1,6 @@
 from lib.task_list import TaskList
 from lib.task import Task
 import sys
-# comments
 
 
 def main():
@@ -35,6 +34,7 @@ def handle_command(command, tl):
     elif command == "display":
         # Assuming you have a function called displayTasks() that prints the tasks
         print(tl)
+
     elif command.startswith("add"):
         parts = command.split()
         if len(parts) < 6 or "-t" not in parts or "-d" not in parts:

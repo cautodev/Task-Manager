@@ -4,22 +4,14 @@ import sys
 
 
 def main():
-    tl = TaskList()
     print("Welcome to the Task Manager Application:")
     print('type "help" for a list of commands\n')
-    # tl.addTask("Task 1", "Need to do x, y, and z")
+
+    tl = TaskList()
+
     while True:
         command = input()
         handle_command(command, tl)
-    task = Task(
-        "Task 2",
-        "This is some longer text that will fill more of a line in the terminal. Lets see how it displays.....",
-    )
-
-    task.markComplete()
-    tl.addTaskT(task)
-    print(tl.length())
-    print(tl)
 
 
 def handle_command(command, tl):
@@ -67,17 +59,22 @@ def handle_command(command, tl):
 
                 # Assuming you have a function called addTask() that adds the task
                 tl.addTask(title, description)
-                print("Task added successfully.")
-    # elif command.startswith("complete"):
-    #     # Assuming the user input for marking a task completed is in the format "complete id"
-    #     parts = command.split(maxsplit=1)
-    #     if len(parts) < 2:
-    #         print("Invalid command. Please provide the id of the task.")
-    #     else:
-    #         task_id = parts[1]
-    #         # Assuming you have a function called markTaskCompleted() that marks the task as completed
-    #         markTaskCompleted(task_id)
-    #         print("Task marked as completed.")
+                print("\nTask added successfully.\n")
+    elif command.startswith("complete"):
+        # Assuming the user input for marking a task completed is in the format "complete id"
+        parts = command.split(maxsplit=1)
+        if len(parts) < 2:
+            print("Invalid command. Please provide the id of the task.")
+        else:
+            try:
+                int(parts[1])
+            except ValueError:
+                print("Invalid command. Please provide the id of the task.")
+
+            task_id = int(parts[1])
+            # Assuming you have a function called markTaskCompleted() that marks the task as completed
+            tl.markTaskCompleted(task_id)
+            print("Task marked as completed.")
     else:
         print("Invalid command. Type 'help' for a list of valid commands.")
 

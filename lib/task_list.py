@@ -12,6 +12,9 @@ class TaskList:
         self.tasks[self.id] = Task(label, description)
         self.id += 1
 
+    def markTaskCompleted(self, id):
+        self.tasks[id].markComplete()
+
     def addTaskT(self, task: Task):
         self.tasks[self.id] = task
         self.id += 1
@@ -20,7 +23,7 @@ class TaskList:
         return len(self.tasks)
 
     def __str__(self):
-        string = ""
+        string = "\n"
         string += "Tasks:\n"
         string += "===============================\n\n"
 

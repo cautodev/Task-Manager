@@ -35,9 +35,9 @@ def test_str():
     task_list.addTask("Task 1", "Description 1")
     task_list.addTask("Task 2", "Description 2")
     expected_str = (
-        "Tasks:\n"
+        "\nTasks:\n"
         "===============================\n\n"
-        "0 - Task 1: Not Complete\n-------------------------------\nDescription 1|end of description|\n\n"
-        "1 - Task 2: Not Complete\n-------------------------------\nDescription 2|end of description|\n\n"
+        "0 - Task 1: Not Complete\n-------------------------------\nDescription 1\n\n"
+        "1 - Task 2: Not Complete\n-------------------------------\nDescription 2\n\n"
     )
     assert str(task_list) == expected_str

@@ -15,6 +15,6 @@ class Task:
         string = ""
         string += f"{self.label}: {completed}\n"
         string += "-------------------------------\n"
-        string += self.description + "|end of description|"
+        string += self.description
 
         return string

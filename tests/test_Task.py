@@ -23,12 +23,16 @@ def test_mark_complete():
 
 def test_str_not_complete():
     task = Task(label="Test Label", description="Test Description")
-    expected_str = "Test Label: Not Complete\n-------------------------------\nTest Description|end of description|"
+    expected_str = (
+        "Test Label: Not Complete\n-------------------------------\nTest Description"
+    )
     assert str(task) == expected_str
 
 
 def test_str_complete():
     task = Task(label="Test Label", description="Test Description")
     task.markComplete()
-    expected_str = "Test Label: Completed\n-------------------------------\nTest Description|end of description|"
+    expected_str = (
+        "Test Label: Completed\n-------------------------------\nTest Description"
+    )
     assert str(task) == expected_str

@@ -39,4 +39,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest tests/test_Task.py
-        pytest tests/test_TasksList.py
+        pytest tests/test_TaskList.py

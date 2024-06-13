@@ -9,7 +9,7 @@ class TaskList:
         self.tasks = {}
 
     def addTask(self, label="", description=""):
-        self.tasks[self.id] = Task(label, description)
+        self.tasks[self.id] = Task(description, label)
         self.id += 1
 
     def addTaskT(self, task: Task):

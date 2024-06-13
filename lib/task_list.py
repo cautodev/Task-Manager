@@ -2,11 +2,11 @@ from .task import Task
 
 
 class TaskList:
-    tasks = {}
     id = 0
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self):
+        self.id = 0
+        self.tasks = {}
 
     def addTask(self, label="", description=""):
         self.tasks[self.id] = Task(label, description)
@@ -19,13 +19,22 @@ class TaskList:
     def length(self):
         return len(self.tasks)
 
+    # DO NOT TOUCH UNTIL LESSON TWO
+    # def markTaskCompleted(self, id):
+    #     pass
+
+    # DO NOT TOUCH UNTIL LESSON THREE
+    # def displayFiltered(self, isComplete) -> str:
+    #     string = ""
+    #     return string
+
     def __str__(self):
-        string = "here"
+        string = "\n"
         string += "Tasks:\n"
         string += "===============================\n\n"
 
         for t in self.tasks:
-            string += "{}".format(t)
+            string += "{} - {}".format(t, self.tasks[t])
             string += "\n\n"
 
         return string

@@ -3,7 +3,7 @@ class Task:
     description = ""
     complete = False
 
-    def __init__(self, label="", description="") -> None:
+    def __init__(self, label="", description=""):
         self.label = label
         self.description = description
 
@@ -15,6 +15,6 @@ class Task:
         string = ""
         string += f"{self.label}: {completed}\n"
         string += "-------------------------------\n"
-        string += self.description + "|end of description|"
+        string += self.description
 
         return string

@@ -1,5 +1,4 @@
 from lib.task_list import TaskList
-from lib.task import Task
 import sys
 
 
@@ -20,16 +19,25 @@ def handle_command(command, tl):
     elif command == "help":
         print("Valid commands include:")
         print("\tquit - exit program")
-        print("\tdisplay - display tasks")
+        print("\tshow - display tasks")
+        print(
+            "\tshow [complete, incomplete] - display only either complete or incomplete tasks"
+        )
         print("\tadd -t <title> -d <description> - add a task")
         print("\tcomplete <id> - mark a task as completed")
-    elif command == "display":
+    elif command == "show":
         # Assuming you have a function called displayTasks() that prints the tasks
         print(tl)
 
+    elif command == "show complete":
+        print(tl.displayFiltered(True))
+
+    elif command == "show incomplete":
+        print(tl.displayFiltered(False))
+
     elif command.startswith("add"):
         parts = command.split()
-        if len(parts) < 6 or "-t" not in parts or "-d" not in parts:
+        if len(parts) < 5 or "-t" not in parts or "-d" not in parts:
             print(
                 "Invalid command. Please provide both title and description using -t and -d tags."
             )

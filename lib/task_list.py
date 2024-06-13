@@ -22,6 +22,18 @@ class TaskList:
     def length(self):
         return len(self.tasks)
 
+    def displayFiltered(self, isComplete):
+        string = "\n"
+        string += "Tasks:\n"
+        string += "===============================\n\n"
+
+        for t in self.tasks:
+            if self.tasks[t].complete == isComplete:
+                string += "{} - {}".format(t, self.tasks[t])
+                string += "\n\n"
+
+        return string
+
     def __str__(self):
         string = "\n"
         string += "Tasks:\n"

@@ -12,9 +12,6 @@ class TaskList:
         self.tasks[self.id] = Task(label, description)
         self.id += 1
 
-    def markTaskCompleted(self, id):
-        self.tasks[id].markComplete()
-
     def addTaskT(self, task: Task):
         self.tasks[self.id] = task
         self.id += 1
@@ -22,17 +19,14 @@ class TaskList:
     def length(self):
         return len(self.tasks)
 
-    def displayFiltered(self, isComplete):
-        string = "\n"
-        string += "Tasks:\n"
-        string += "===============================\n\n"
+    # DO NOT TOUCH UNTIL LESSON TWO
+    # def markTaskCompleted(self, id):
+    #     pass
 
-        for t in self.tasks:
-            if self.tasks[t].complete == isComplete:
-                string += "{} - {}".format(t, self.tasks[t])
-                string += "\n\n"
-
-        return string
+    # DO NOT TOUCH UNTIL LESSON THREE
+    # def displayFiltered(self, isComplete) -> str:
+    #     string = ""
+    #     return string
 
     def __str__(self):
         string = "\n"
